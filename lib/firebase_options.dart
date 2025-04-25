@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -59,4 +47,43 @@ class DefaultFirebaseOptions {
     projectId: 'fasilitas-umum-ac9ea',
     storageBucket: 'fasilitas-umum-ac9ea.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDcs7QhbiPhFjM86Oqe2Y4R3j7mZJvwyic',
+    appId: '1:288663738760:web:45c77f3e996dbd7b8ec23d',
+    messagingSenderId: '288663738760',
+    projectId: 'fasilitas-umum-ac9ea',
+    authDomain: 'fasilitas-umum-ac9ea.firebaseapp.com',
+    storageBucket: 'fasilitas-umum-ac9ea.firebasestorage.app',
+    measurementId: 'G-VDXXEMT2Q3',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDrUfb-_kafrcPRRQJ4V_xNWXEWlDGMtdM',
+    appId: '1:288663738760:ios:66c9764863534c128ec23d',
+    messagingSenderId: '288663738760',
+    projectId: 'fasilitas-umum-ac9ea',
+    storageBucket: 'fasilitas-umum-ac9ea.firebasestorage.app',
+    iosBundleId: 'com.example.fasilitasUmum',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDrUfb-_kafrcPRRQJ4V_xNWXEWlDGMtdM',
+    appId: '1:288663738760:ios:66c9764863534c128ec23d',
+    messagingSenderId: '288663738760',
+    projectId: 'fasilitas-umum-ac9ea',
+    storageBucket: 'fasilitas-umum-ac9ea.firebasestorage.app',
+    iosBundleId: 'com.example.fasilitasUmum',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDcs7QhbiPhFjM86Oqe2Y4R3j7mZJvwyic',
+    appId: '1:288663738760:web:8f9a290f9e686b8a8ec23d',
+    messagingSenderId: '288663738760',
+    projectId: 'fasilitas-umum-ac9ea',
+    authDomain: 'fasilitas-umum-ac9ea.firebaseapp.com',
+    storageBucket: 'fasilitas-umum-ac9ea.firebasestorage.app',
+    measurementId: 'G-DRRDQR5X1J',
+  );
+
 }
